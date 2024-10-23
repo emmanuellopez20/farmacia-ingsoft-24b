@@ -71,7 +71,7 @@ class ProveedorCRUD(tk.Toplevel):
         self.btEliminar.grid(row=0, column=4, padx=10, pady=10)
         self.btEliminar.config(state=tk.DISABLED)
 
-
+       
 
     def nuevo_proveedor(self):
         # Implementación de lógica para nuevo proveedor

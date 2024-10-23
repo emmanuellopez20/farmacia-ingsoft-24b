@@ -23,7 +23,7 @@ class conexion:
         except mysql.connector.Error as err:
             print(f"Error al conectar con la base de datos: {err}")
             return None
-
+    
     def close(self):
         if self.conn and self.conn.is_connected():
             self.conn.close()

@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 import conexion as con
-from utils.clienteGS import Cliente
+from utils.clienteGs import Cliente
 
 class dbClientes:
     def get_all(self):
