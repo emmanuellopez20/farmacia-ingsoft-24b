@@ -82,24 +82,6 @@ class dbClientes:
             print(f"Error al obtener el maximo ID: {err}")
             return 0
 
-    """     def get_all_clientes(self):
-            try:
-                self.con = con.conexion()
-                self.conn = self.con.open()
-                self.cursor = self.conn.cursor()
-                self.sql = "SELECT * FROM clientes"
-                self.cursor.execute(self.sql)
-                rows = self.cursor.fetchall()
-                self.con.close()
-                clientes = []
-                for row in rows:
-                    cliente = Cliente(row[0], row[1], row[2], row[3])
-                    clientes.append(cliente)
-                return clientes
-            except mysql.connector.Error as err:
-                print(f"Error al obtener clientes: {err}")
-                return [] """
-
 
     def get_all_clientes(self):
         try:

@@ -134,17 +134,56 @@ class dbProductos:
             print(f"Error al obtener productos: {err}")
             return []
 
-    def aumentar_stock(self, nombre_producto, cantidad):
+    """     def aumentar_stock(self, nombre_producto, cantidad):
+            try:
+                self.con = con.conexion()
+                self.conn = self.con.open()
+                self.cursor = self.conn.cursor()
+                self.sql = "UPDATE productos SET cantidad_stock = cantidad_stock + %s WHERE nombre_producto = %s"
+                self.cursor.execute(self.sql, (cantidad, nombre_producto))
+                self.conn.commit()
+                self.con.close()
+            except mysql.connector.Error as err:
+                print(f"Error al aumentar el stock: {err}")
+
+        def disminuir_stock(self, id_producto, cantidad):
+            try:
+                self.con = con.conexion()
+                self.conn = self.con.open()
+                self.cursor = self.conn.cursor()
+                self.sql = "UPDATE productos SET cantidad_stock = cantidad_stock - %s WHERE id_producto = %s"
+                self.cursor.execute(self.sql, (cantidad, id_producto))
+                self.conn.commit()
+                self.con.close()
+            except mysql.connector.Error as err:
+                print(f"Error al disminuir stock: {err}")
+    """
+
+    def aumentar_stock(self, id_producto, cantidad):
         try:
             self.con = con.conexion()
             self.conn = self.con.open()
             self.cursor = self.conn.cursor()
-            self.sql = "UPDATE productos SET cantidad_stock = cantidad_stock + %s WHERE nombre_producto = %s"
-            self.cursor.execute(self.sql, (cantidad, nombre_producto))
+            self.sql = "UPDATE productos SET cantidad_stock = cantidad_stock + %s WHERE id_producto = %s"
+            self.cursor.execute(self.sql, (cantidad, id_producto))
             self.conn.commit()
             self.con.close()
         except mysql.connector.Error as err:
             print(f"Error al aumentar el stock: {err}")
+
+    def disminuir_stock(self, id_producto, cantidad):
+        try:
+            self.con = con.conexion()
+            self.conn = self.con.open()
+            self.cursor = self.conn.cursor()
+            self.sql = "UPDATE productos SET cantidad_stock = cantidad_stock - %s WHERE id_producto = %s"
+            self.cursor.execute(self.sql, (cantidad, id_producto))
+            self.conn.commit()
+            self.con.close()
+        except mysql.connector.Error as err:
+            print(f"Error al disminuir stock: {err}")
+
+
 
     def get_productos_by_proveedor(self, id_proveedor):
         try:
@@ -164,17 +203,6 @@ class dbProductos:
             print(f"Error al obtener productos: {err}")
             return []
         
-    def disminuir_stock(self, id_producto, cantidad):
-        try:
-            self.con = con.conexion()
-            self.conn = self.con.open()
-            self.cursor = self.conn.cursor()
-            self.sql = "UPDATE productos SET cantidad_stock = cantidad_stock - %s WHERE id_producto = %s"
-            self.cursor.execute(self.sql, (cantidad, id_producto))
-            self.conn.commit()
-            self.con.close()
-        except mysql.connector.Error as err:
-            print(f"Error al disminuir stock: {err}")
 
 
 

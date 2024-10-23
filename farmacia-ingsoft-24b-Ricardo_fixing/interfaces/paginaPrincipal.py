@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 from interfaces.venta import Venta
-from interfaces.carrito import Carrito
 from interfaces.compra import Compra
 from interfaces.proveedor_crud import ProveedorCRUD
 from interfaces.almacen import Almacen

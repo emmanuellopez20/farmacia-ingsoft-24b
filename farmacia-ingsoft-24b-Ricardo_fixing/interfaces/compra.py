@@ -157,7 +157,6 @@ class Compra(tk.Toplevel):
         self.fecha_entry.config(state='readonly')
         self.btSalvar.config(state=tk.NORMAL)
         self.btCancelar.config(state=tk.NORMAL)
-        self.btEditar.config(state=tk.DISABLED)
         self.btEliminar.config(state=tk.DISABLED)
 
     def salvar(self):
